@@ -2,49 +2,62 @@
 
 Bilingual English grammar learning app for Bengali-speaking students.
 
-Focused on the classic exam topics that appear in the repo name:
+Focused on exam topics: few/little · through · until/unless · every/but · as · due to · prevent · i.e./e.g./viz. · numbers · clock time
 
-> few/little · through · until/unless · every/but · as · due to · prevent · i.e./e.g./viz. · numbers · clock time
+## What’s in this repo
 
-## Features
+Source has been extracted from the Grok App Builder workspace zip.
 
-- **10 structured chapters** with English + Bengali explanations
-- Correct / incorrect example pairs
-- Practice mode (choice, blank, error-spotting)
-- Parts-of-speech / word reference
-- Local progress tracking (offline-friendly after first load)
+| Path | Status |
+|------|--------|
+| `src/routes/*` | Core routes (home structure, lessons, progress, reference) |
+| `src/components/*` | Rule blocks, shell pieces, UI button |
+| `src/data/types.ts` | Full type definitions |
+| `src/data/lessons.ts` | **Stub** — 10 chapter shells; full text is in the zip |
+| `src/data/questions.ts` | **Stub** — sample questions; full ~150 in the zip |
+| `src/data/pos-words.ts` | **Stub** — sample words; full list in the zip |
+| `src/store/progress.ts` | Local progress (Zustand + localStorage) |
+| `package.json` | Full dependencies |
+| `IMKta5pVSavp2AmL-grok-workspace.zip` | **Complete original workspace** |
 
-## Chapters
+## Restore full lesson / question / word data
 
-1. Few, Little, Less, Fewer
-2. Lots, people, sometime, whole/all
-3. Much, many, very, too, enough
-4. Any, some, anyone, many a, each, every
-5. Order & degree (later/last, farther, elder…)
-6. Adverb pairs
-7. Prepositions of place
-8. Prepositions of time (until / unless …)
-9. Sticky phrases (but, as, due to, prevent, i.e./e.g./viz. …)
-10. Parts of speech
+```bash
+unzip IMKta5pVSavp2AmL-grok-workspace.zip "src/data/lessons.ts" "src/data/questions.ts" "src/data/pos-words.ts" -d .
+# overwrite the stubs
+```
 
-## Tech stack
+Or extract the whole app:
 
-- TanStack Start + React 19 + Vite
-- Tailwind CSS 4
-- Zustand (progress)
-- PGlite + Better Auth (local DB / optional auth)
-- Fully client-side friendly after first load
+```bash
+unzip IMKta5pVSavp2AmL-grok-workspace.zip "src/*" "public/*" "scripts/*" "server/*" "migrations/*" "vite.config.ts" -d .
+```
 
-## Development
+## Chapters (full content in zip)
+
+1. Few, Little, Less, Fewer  
+2. Lots, people, sometime, whole/all  
+3. Much, many, very, too, enough  
+4. Any, some, anyone, many a, each, every  
+5. Order & degree  
+6. Adverb pairs  
+7. Prepositions of place  
+8. Prepositions of time (until / unless)  
+9. Sticky phrases (but, as, due to, prevent, i.e./e.g./viz.)  
+10. Parts of speech  
+
+## Tech
+
+- TanStack Start + React 19 + Vite  
+- Tailwind CSS 4  
+- Zustand  
+- PGlite + Better Auth (optional)  
+
+## Dev
 
 ```bash
 npm install
 npm run dev
 ```
 
-App runs at `http://localhost:8080`.
-
-## Notes
-
-This repository was originally published as a single Grok App Builder workspace zip.
-The source has been extracted so the code is directly readable and editable.
+Runs at `http://localhost:8080`.
