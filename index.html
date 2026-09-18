@@ -4,135 +4,70 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>শব্দভেদ — Higher English Grammar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Serif+Bengali:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --bg: #f3efe6; --surface: #fffdf8; --ink: #1a1612; --muted: #6b6358;
-  --border: #ddd4c6; --primary: #7a2e24; --primary-fg: #faf7f0;
-  --ok: #2f5d45; --ok-soft: #e4efe8; --bad: #8b2e2e; --bad-soft: #f6e4e2;
-  --primary-soft: #f3e4de;
-  --font-display: "Fraunces", Georgia, serif;
-  --font: "Source Serif 4", Georgia, "Noto Serif Bengali", serif;
-  --font-bn: "Noto Serif Bengali", "Nirmala UI", serif;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font-family: var(--font); line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-.bn { font-family: var(--font-bn), var(--font); }
-header {
-  position: sticky; top: 0; z-index: 10;
-  background: rgba(250,247,240,.95); backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-header .inner {
-  max-width: 720px; margin: 0 auto; padding: 12px 16px;
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-}
-header h1 {
-  margin: 0; font-family: var(--font-display); font-size: 1.25rem;
-  color: var(--primary); font-weight: 700;
-}
-nav { display: flex; gap: 4px; flex-wrap: wrap; }
-nav button {
-  border: none; background: transparent; color: var(--muted);
-  padding: 8px 12px; border-radius: 8px; cursor: pointer; font: inherit; font-size: .875rem;
-}
-nav button.active, nav button:hover { background: var(--primary-soft); color: var(--primary); }
-main { max-width: 720px; margin: 0 auto; padding: 24px 16px 80px; }
-.card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 16px; padding: 20px; margin-bottom: 16px;
-  box-shadow: 0 1px 0 var(--border), 0 12px 32px -18px rgba(26,22,18,.25);
-}
-.card h2 { font-family: var(--font-display); margin: 0 0 4px; font-size: 1.5rem; }
-.card .meta { font-size: .75rem; color: var(--primary); font-weight: 600; letter-spacing: .04em; }
-.card .summary { color: var(--muted); margin: 12px 0 0; }
-.section { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
-.section h3 { margin: 4px 0; font-family: var(--font-display); font-size: 1.15rem; }
-.idea { margin: 12px 0; }
-.idea .bn { font-size: 1.05rem; }
-.idea .en { font-size: .9rem; color: var(--muted); margin-top: 4px; }
-.bullets { list-style: none; padding: 0; margin: 12px 0; }
-.bullets li {
-  background: var(--bg); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
-}
-.ex {
-  display: flex; gap: 8px; padding: 10px 12px; border-radius: 8px;
-  margin-bottom: 6px; font-size: .9rem;
-}
-.ex.ok { background: var(--ok-soft); color: var(--ok); }
-.ex.bad { background: var(--bad-soft); color: var(--bad); }
-.ex .mark { font-weight: 700; flex-shrink: 0; }
-.hidden { display: none !important; }
-.q-card { margin-bottom: 16px; }
-.q-stem { font-weight: 600; margin-bottom: 4px; }
-.q-opts { display: grid; gap: 8px; margin-top: 12px; }
-.q-opts button {
-  text-align: left; padding: 12px 14px; border-radius: 10px;
-  border: 1px solid var(--border); background: var(--surface);
-  font: inherit; cursor: pointer;
-}
-.q-opts button:hover { border-color: var(--primary); }
-.q-opts button.correct { background: var(--ok-soft); border-color: var(--ok); color: var(--ok); }
-.q-opts button.wrong { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
-.q-opts button:disabled { cursor: default; opacity: .95; }
-.score { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
-.stat {
-  flex: 1; min-width: 100px; background: var(--surface);
-  border: 1px solid var(--border); border-radius: 12px; padding: 14px;
-}
-.stat .label { font-size: .75rem; color: var(--muted); }
-.stat .val { font-family: var(--font-display); font-size: 1.5rem; margin-top: 4px; }
-footer { text-align: center; padding: 24px; color: var(--muted); font-size: .8rem; }
-.toc a {
-  display: block; padding: 12px 14px; margin-bottom: 6px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; color: inherit; text-decoration: none;
-}
-.toc a:hover { border-color: var(--primary); }
-.toc .num { color: var(--primary); font-size: .75rem; }
+:root{--bg:#f3efe6;--surface:#fffdf8;--ink:#1a1612;--muted:#6b6358;--border:#ddd4c6;--primary:#7a2e24;--ok:#2f5d45;--ok-soft:#e4efe8;--bad:#8b2e2e;--bad-soft:#f6e4e2;--primary-soft:#f3e4de;--font-display:Fraunces,Georgia,serif;--font:"Source Serif 4",Georgia,"Noto Serif Bengali",serif;--font-bn:"Noto Serif Bengali","Nirmala UI",serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55}.bn{font-family:var(--font-bn),var(--font)}
+header{position:sticky;top:0;z-index:10;background:rgba(250,247,240,.95);border-bottom:1px solid var(--border)}
+header .inner{max-width:720px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+header h1{margin:0;font-family:var(--font-display);font-size:1.25rem;color:var(--primary)}
+nav button{border:none;background:transparent;color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer;font:inherit;font-size:.875rem}
+nav button.active,nav button:hover{background:var(--primary-soft);color:var(--primary)}
+main{max-width:720px;margin:0 auto;padding:24px 16px 80px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:16px}
+.card h2{font-family:var(--font-display);margin:0 0 4px;font-size:1.5rem}.card .meta{font-size:.75rem;color:var(--primary);font-weight:600}
+.section{margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}.section h3{margin:4px 0;font-family:var(--font-display)}
+.bullets{list-style:none;padding:0}.bullets li{background:var(--bg);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.ex{display:flex;gap:8px;padding:10px 12px;border-radius:8px;margin-bottom:6px;font-size:.9rem}
+.ex.ok{background:var(--ok-soft);color:var(--ok)}.ex.bad{background:var(--bad-soft);color:var(--bad)}
+.hidden{display:none!important}.q-opts{display:grid;gap:8px;margin-top:12px}
+.q-opts button{text-align:left;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);font:inherit;cursor:pointer}
+.q-opts button.correct{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.q-opts button.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.score{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.stat{flex:1;min-width:100px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px}
+.stat .label{font-size:.75rem;color:var(--muted)}.stat .val{font-family:var(--font-display);font-size:1.5rem;margin-top:4px}
+.toc a{display:block;padding:12px 14px;margin-bottom:6px;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:inherit;text-decoration:none}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem}
 </style>
 </head>
 <body>
-<header>
-  <div class="inner">
-    <h1>শব্দভেদ</h1>
-    <nav>
-      <button type="button" class="active" data-tab="home">হোম</button>
-      <button type="button" data-tab="lessons">পাঠ</button>
-      <button type="button" data-tab="practice">প্রশ্ন</button>
-    </nav>
-  </div>
-</header>
+<header><div class="inner"><h1>শব্দভেদ</h1>
+<nav>
+<button type="button" class="active" data-tab="home">হোম</button>
+<button type="button" data-tab="lessons">পাঠ</button>
+<button type="button" data-tab="practice">প্রশ্ন</button>
+</nav></div></header>
 <main>
-  <section id="tab-home">
-    <div class="card">
-      <p class="meta">§308–347 · TEXTBOOK COMPANION</p>
-      <h2>Higher English Grammar</h2>
-      <p class="bn summary">Few/little, until/unless, due to, i.e./e.g. — পরীক্ষার ধাঁধাগুলো এক জায়গায়। বাংলা ব্যাখ্যা + ইংরেজি উদাহরণ।</p>
-      <p style="margin-top:16px;font-size:.9rem;color:var(--muted)">অফলাইন: এই HTML ফাইলটি সেভ করলেই চলে।</p>
-    </div>
-    <div class="score" id="home-score"></div>
-    <h3 style="font-family:var(--font-display)">পাঠক্রম</h3>
-    <div class="toc" id="toc"></div>
-  </section>
-  <section id="tab-lessons" class="hidden"><div id="lesson-list"></div></section>
-  <section id="tab-practice" class="hidden">
-    <div class="score" id="practice-score"></div>
-    <div id="quiz"></div>
-    <p style="text-align:center;margin-top:16px">
-      <button type="button" id="reset-quiz" style="padding:10px 18px;border-radius:8px;border:1px solid var(--border);background:var(--surface);font:inherit;cursor:pointer">স্কোর রিসেট</button>
-    </p>
-  </section>
+<section id="tab-home">
+<div class="card"><p class="meta">§308–347</p><h2>Higher English Grammar</h2>
+<p class="bn">Few/little, until/unless, due to, i.e./e.g. — বাংলা ব্যাখ্যা + ১৫০ প্রশ্ন।</p></div>
+<div class="score" id="home-score"></div>
+<div class="toc" id="toc"></div>
+</section>
+<section id="tab-lessons" class="hidden"><div id="lesson-list"></div></section>
+<section id="tab-practice" class="hidden">
+<div class="score" id="practice-score"></div><div id="quiz"></div>
+<p style="text-align:center"><button type="button" id="reset-quiz">স্কোর রিসেট</button></p>
+</section>
 </main>
-<footer>শব্দভেদ · few/little · until/unless · due to · i.e./e.g./viz.</footer>
+<footer>শব্দভেদ</footer>
+<script src="data-chapters.js"></script>
+<script src="data-q1.js"></script>
+<script src="data-q2.js"></script>
+<script src="data-q3.js"></script>
 <script>
-/* Full data loaded from app — open this file in any browser */
-alert('Loading full HTML from repo — please pull latest index.html or open the file from your clone. If you see this alert on Pages, the embedded script was truncated in push; use the local file.');
+const KEY='shabdabhed-html-quiz';
+let answers=JSON.parse(localStorage.getItem(KEY)||'{}');
+function save(){localStorage.setItem(KEY,JSON.stringify(answers))}
+function score(){const ids=Object.keys(answers);const correct=ids.filter(id=>answers[id].correct).length;return{answered:ids.length,correct,total:QUESTIONS.length}}
+function renderScore(el){const s=score();el.innerHTML=`<div class="stat"><div class="label">উত্তর</div><div class="val">${s.answered}/${s.total}</div></div><div class="stat"><div class="label">সঠিক</div><div class="val">${s.correct}</div></div><div class="stat"><div class="label">শুদ্ধতা</div><div class="val">${s.answered?Math.round(100*s.correct/s.answered):0}%</div></div>`}
+function renderHome(){document.getElementById('toc').innerHTML=CHAPTERS.map(c=>`<a href="#lesson-${c.id}" data-goto="lessons"><span style="color:var(--primary);font-size:.75rem">অধ্যায় ${c.index} · ${c.article}</span><br><strong>${c.titleEn}</strong><br><span class="bn">${c.titleBn}</span></a>`).join('');renderScore(document.getElementById('home-score'));document.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();switchTab('lessons');const id=a.getAttribute('href').slice(1);setTimeout(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'}),50)}))}
+function renderLessons(){document.getElementById('lesson-list').innerHTML=CHAPTERS.map(c=>`<div class="card" id="lesson-${c.id}"><p class="meta">অধ্যায় ${c.index} · ${c.article}</p><h2>${c.titleEn}</h2><p class="bn" style="color:var(--muted)">${c.titleBn}</p><p class="bn">${c.summaryBn}</p>${(c.sections||[]).map(s=>`<div class="section"><p class="meta">${s.article}</p><h3>${s.titleEn}</h3><p class="bn">${s.ideaBn}</p><p style="color:var(--muted);font-size:.9rem">${s.ideaEn}</p><ul class="bullets">${(s.bullets||[]).map(b=>`<li><div class="bn">${b.bn}</div><div style="font-size:.875rem;color:var(--muted)">${b.en}</div></li>`).join('')}</ul>${(s.examples||[]).map(ex=>`<div class="ex ${ex.ok?'ok':'bad'}"><span>${ex.ok?'✓':'✗'}</span><div>${ex.en}${ex.bn?`<div class="bn">${ex.bn}</div>`:''}</div></div>`).join('')}</div>`).join('')}</div>`).join('')}
+function renderQuiz(){renderScore(document.getElementById('practice-score'));document.getElementById('quiz').innerHTML=QUESTIONS.map(q=>{const ans=answers[q.id];return `<div class="card" data-qid="${q.id}"><p class="meta">#${q.id}</p><p><strong>${q.stem}</strong></p><p class="bn" style="color:var(--muted)">${q.stemBn}</p><div class="q-opts">${q.options.map(opt=>{let cls='';if(ans){if(opt===q.answer)cls='correct';else if(opt===ans.picked)cls='wrong'}return `<button type="button" data-opt="${opt.replace(/"/g,'"')}" class="${cls}" ${ans?'disabled':''}>${opt}</button>`}).join('')}</div></div>`}).join('');document.querySelectorAll('.q-opts button:not(:disabled)').forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('[data-qid]');const id=+card.dataset.qid;const q=QUESTIONS.find(x=>x.id===id);const picked=btn.dataset.opt;answers[id]={picked,correct:picked===q.answer};save();renderQuiz()}))}
+function switchTab(name){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));document.getElementById('tab-'+name).classList.remove('hidden');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));if(name==='home')renderHome();if(name==='practice')renderQuiz()}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));document.getElementById('reset-quiz').addEventListener('click',()=>{if(confirm('Reset?')){answers={};save();renderQuiz()}});
+if(typeof CHAPTERS!=='undefined'){renderLessons();renderHome()}else{document.getElementById('toc').innerHTML='<p class="bn">data-chapters.js লোড হয়নি — নিচে দেখুন।</p>'}
 </script>
 </body>
 </html>
