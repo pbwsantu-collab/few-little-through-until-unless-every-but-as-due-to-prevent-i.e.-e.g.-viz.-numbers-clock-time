@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f3efe6;
+  --color-bg-elevated: #faf7f0;
+  --color-surface: #fffdf8;
+  --color-ink: #1a1612;
+  --color-fg: #1a1612;
+  --color-muted: #6b6358;
+  --color-subtle: #8a8174;
+  --color-border: #ddd4c6;
+  --color-border-strong: #c9bdaa;
+  --color-primary: #7a2e24;
+  --color-primary-fg: #faf7f0;
+  --color-primary-soft: #f3e4de;
+  --color-ok: #2f5d45;
+  --color-ok-soft: #e4efe8;
+  --color-bad: #8b2e2e;
+  --color-bad-soft: #f6e4e2;
+  --color-warn: #8a5a18;
+  --color-warn-soft: #f6edd8;
+  --color-rule: #2c3a4a;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-sans: "Source Serif 4", "Iowan Old Style", Georgia, "Noto Serif Bengali", "Nirmala UI", serif;
+  --font-bn: "Noto Serif Bengali", "Noto Sans Bengali", "Nirmala UI", "Vrinda", serif;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-card: 0 1px 0 #ddd4c6, 0 12px 32px -18px rgb(26 22 18 / 0.28);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+  p, li {
+    text-wrap: pretty;
+  }
+}
+
+.bn {
+  font-family: var(--font-bn), var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
