@@ -2,9 +2,10 @@
 <html lang="bn">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <meta name="theme-color" content="#7a2e24"/>
-  <meta name="description" content="শব্দভেদ — Higher English Grammar. Few/little, until/unless, due to, i.e./e.g."/>
+  <meta name="description" content="শব্দভেদ — Higher English Grammar. Few/little, until/unless, due to, i.e./e.g. · বাংলা ব্যাখ্যা + ১৫০ প্রশ্ন · অফলাইন · SRS"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
   <title>শব্দভেদ — Higher English Grammar</title>
   <link rel="manifest" href="manifest.json"/>
   <link rel="icon" href="icon.svg" type="image/svg+xml"/>
@@ -17,37 +18,54 @@
   <header>
     <div class="inner">
       <h1>শব্দভেদ</h1>
-      <nav>
-        <button type="button" class="active" data-tab="home">হোম</button>
-        <button type="button" data-tab="lessons">পাঠ</button>
-        <button type="button" data-tab="practice">প্রশ্ন</button>
-      </nav>
+      <div class="header-actions">
+        <span class="streak-pill" title="Daily streak"></span>
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Dark / Light">🌙</button>
+        <nav>
+          <button type="button" class="active" data-tab="home">হোম</button>
+          <button type="button" data-tab="lessons">পাঠ</button>
+          <button type="button" data-tab="practice">প্রশ্ন</button>
+        </nav>
+      </div>
     </div>
   </header>
+
   <main>
     <section id="tab-home">
       <div class="card">
-        <p class="meta">§308–347 · TEXTBOOK COMPANION</p>
+        <p class="meta">§308–347 · TEXTBOOK COMPANION · EXTREME</p>
         <h2>Higher English Grammar</h2>
         <p class="bn summary">Few/little, until/unless, due to, i.e./e.g. — পরীক্ষার ধাঁধাগুলো এক জায়গায়। বাংলা ব্যাখ্যা + ইংরেজি উদাহরণ।</p>
-        <p class="hint">অফলাইন: একবার খুললেই পরেরবার নেট ছাড়া চলবে।</p>
+        <p class="hint">অফলাইন · ডার্ক মোড · SRS রিভিউ · কীবোর্ড শর্টকাট · উচ্চারণ · স্ট্রিক</p>
       </div>
       <div class="score" id="home-score"></div>
       <h3 class="section-title">পাঠক্রম</h3>
       <div class="toc" id="toc"></div>
     </section>
+
     <section id="tab-lessons" class="hidden">
       <div id="lesson-list"></div>
     </section>
+
     <section id="tab-practice" class="hidden">
       <div class="score" id="practice-score"></div>
       <div id="quiz"></div>
       <p class="center">
-        <button type="button" id="reset-quiz" class="btn">স্কোর রিসেট</button>
+        <button type="button" id="reset-quiz" class="btn danger">স্কোর রিসেট</button>
       </p>
     </section>
   </main>
-  <footer>শব্দভেদ · few/little · until/unless · due to · i.e./e.g./viz.</footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <ul>
+      <li><button type="button" class="active" data-tab="home"><span class="ico">🏠</span>হোম</button></li>
+      <li><button type="button" data-tab="lessons"><span class="ico">📖</span>পাঠ</button></li>
+      <li><button type="button" data-tab="practice"><span class="ico">✏️</span>প্রশ্ন</button></li>
+    </ul>
+  </nav>
+
+  <footer>শব্দভেদ · few/little · until/unless · due to · i.e./e.g./viz. · Extreme Edition</footer>
+
   <script src="data-chapters.js"></script>
   <script src="data-q1.js"></script>
   <script src="data-q2.js"></script>
