@@ -1,5 +1,5 @@
-/* শব্দভেদ — service worker */
-const CACHE = "shabdabhed-v1";
+/* শব্দভেদ — service worker · Extreme Edition */
+const CACHE = "shabdabhed-v2-extreme";
 const ASSETS = [
   "./",
   "./index.html",
