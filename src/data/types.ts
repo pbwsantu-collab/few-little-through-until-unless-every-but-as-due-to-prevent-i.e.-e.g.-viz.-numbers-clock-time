@@ -42,17 +42,23 @@ export type Question = {
   id: number;
   chapterId: string;
   type: QuestionType;
-  promptEn: string;
-  promptBn?: string;
-  options?: string[];
-  answer: string | number;
-  explanationBn?: string;
-  explanationEn?: string;
+  stem: string;
+  stemBn: string;
+  options: string[];
+  answer: string;
+  whyEn: string;
+  whyBn: string;
+};
+
+export type PosUse = {
+  pos: string;
+  posBn: string;
+  example: string;
+  exampleBn: string;
 };
 
 export type PosWord = {
   word: string;
-  pos: string;
-  meaningBn: string;
-  exampleEn?: string;
+  uses: PosUse[];
+  notes?: { en: string; bn: string }[];
 };
