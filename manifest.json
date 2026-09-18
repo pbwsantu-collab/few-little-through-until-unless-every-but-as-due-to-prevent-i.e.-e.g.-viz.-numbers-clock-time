@@ -1,0 +1,18 @@
+{
+  "name": "শব্দভেদ — Higher English Grammar",
+  "short_name": "শব্দভেদ",
+  "description": "Few/little, until/unless, due to, i.e./e.g. — bilingual English grammar for exams",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3efe6",
+  "theme_color": "#7a2e24",
+  "lang": "bn",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
